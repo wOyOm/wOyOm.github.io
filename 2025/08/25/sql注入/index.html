@@ -79,31 +79,35 @@ document.addEventListener("pjax:complete", reset);document.addEventListener('pja
  const script = document.createElement('script');
  script.src = 'https://vercount.one/js';
  document.head.appendChild(script);
-});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>sql注入</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-08-25T13:46:09.000Z" id="date"> 2025-08-25</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-08-27T03:50:51.038Z" id="updated"> 2025-08-27</time></div></span><br><span id="vercount_container_page_pv">页面浏览: <span class="control" id="vercount_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="sqli-labs通关"><a href="#sqli-labs通关" class="headerlink" title="sqli-labs通关"></a>sqli-labs通关</h1><h2 id="1-联合注入（less-1）"><a href="#1-联合注入（less-1）" class="headerlink" title="1.联合注入（less 1）"></a>1.联合注入（less 1）</h2><p>1.注入点是否存在 即是否有闭合报错,输入id&#x3D;1‘</p>
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>sql注入</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-08-25T13:46:09.000Z" id="date"> 2025-08-25</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-08-27T07:34:09.365Z" id="updated"> 2025-08-27</time></div></span><br><span id="vercount_container_page_pv">页面浏览: <span class="control" id="vercount_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="sqli-labs通关"><a href="#sqli-labs通关" class="headerlink" title="sqli-labs通关"></a>sqli-labs通关</h1><h2 id="1-联合注入（less-1）"><a href="#1-联合注入（less-1）" class="headerlink" title="1.联合注入（less 1）"></a>1.联合注入（less 1）</h2><p>1.注入点是否存在 即是否有闭合报错,输入id&#x3D;1‘</p>
 <p>2.利用注释符号–+</p>
 <p>3.利用order by 函数观察查询表的列数</p>
 <p>4.查询后利用联合注入爆出注入点</p>
 <p>5.执行恶意查询指令database()</p>
-<p>6.查询该库下的所有表名group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()–+</p>
-<p>243</p>
+<p>6.查询该库下的所有表名group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()–+</p class='item-img' data-src='https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporamytyporaimage-20250718210938971.png'><img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporamytyporaimage-20250718210938971.png" alt="img" style="zoom:50%;" />
+
 <p>7.查询列名</p>
-<p>group_concat(column_name) from information_schema.columns where table_name&#x3D;’user’–+</p>
-<p>440</p>
-<p>8.查询列里的字段</p>
-<p>577</p>
-<h2 id="2-less-2-数字型注入只有在开头检测有差别"><a href="#2-less-2-数字型注入只有在开头检测有差别" class="headerlink" title="2.less 2 (数字型注入只有在开头检测有差别)"></a>2.less 2 (数字型注入只有在开头检测有差别)</h2><p>744</p>
-<p>870</p>
-<p>直观感受下原代码是 “i’（less1也就是字符型这里需要读取封闭符号取字符串）</p>
-<p>1038</p>
-<p>1164</p>
-<p>less2 你不管怎么去改它的数字都不会发生变化但是你改封闭符号个数会跳出来再进一步探索</p>
-<p>1336</p>
+<p>group_concat(column_name) from information_schema.columns where table_name&#x3D;’user’–+</p class='item-img' data-src='https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250718213106176.png'><img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250718213106176.png" alt="image-20250718213106176" style="zoom:50%;" />
+
+<p>8.查询列里的字段</p class='item-img' data-src='https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporamytyporaimage-20250718214009457.png'><img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporamytyporaimage-20250718214009457.png" alt="image-20250718214009457" style="zoom:50%;" />
+
+<h2 id="2-less-2-数字型注入只有在开头检测有差别"><a href="#2-less-2-数字型注入只有在开头检测有差别" class="headerlink" title="2.less 2 (数字型注入只有在开头检测有差别)"></a>2.less 2 (数字型注入只有在开头检测有差别)</h2 class='item-img' data-src='https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250718231500063.png'><img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250718231500063.png" alt="image-20250718231500063" style="zoom:50%;" />
+
+<img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250718231712552.png" alt="image-20250718231712552" style="zoom:50%;" />
+
+<p>直观感受下原代码是 “i’（less1也就是字符型这里需要读取封闭符号取字符串）</p class='item-img' data-src='https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250718231953310.png'><img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250718231953310.png" alt="image-20250718231953310" style="zoom:50%;" />
+
+<img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250718231428526.png" alt="image-20250718231428526" style="zoom:50%;" />
+
+<p>less2 你不管怎么去改它的数字都不会发生变化但是你改封闭符号个数会跳出来再进一步探索</p class='item-img' data-src='https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250718232208432.png'><img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250718232208432.png" alt="image-20250718232208432" style="zoom:50%;" />
+
 <p>你就会发现它根本不识别字符串这里跳出来数字了所以这里一定读取的是值那就不能出现封闭的情况不然就会被识别为字符串</p>
 <h2 id="一些帮助理解的知识点"><a href="#一些帮助理解的知识点" class="headerlink" title="一些帮助理解的知识点"></a>一些帮助理解的知识点</h2><h3 id="在MySQL中，把-information-schema-看作是一个数据库，确切说是信息数据库。其中保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权-限等。在INFORMATION-SCHEMA中，有数个只读表。它们实际上是视图，而不是基本表，因此，你将无法看到与之相关的任何文件。"><a href="#在MySQL中，把-information-schema-看作是一个数据库，确切说是信息数据库。其中保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权-限等。在INFORMATION-SCHEMA中，有数个只读表。它们实际上是视图，而不是基本表，因此，你将无法看到与之相关的任何文件。" class="headerlink" title="在MySQL中，把 information_schema  看作是一个数据库，确切说是信息数据库。其中保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权 限等。在INFORMATION_SCHEMA中，有数个只读表。它们实际上是视图，而不是基本表，因此，你将无法看到与之相关的任何文件。"></a>在MySQL中，把 information_schema  看作是一个数据库，确切说是信息数据库。其中保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权 限等。在INFORMATION_SCHEMA中，有数个只读表。它们实际上是视图，而不是基本表，因此，你将无法看到与之相关的任何文件。</h3><h3 id="select：用于指定查询中要返回的字段，如部分已有字段、全部字段（-）、新增计算字段from：-指定查询的数据来源，即表名"><a href="#select：用于指定查询中要返回的字段，如部分已有字段、全部字段（-）、新增计算字段from：-指定查询的数据来源，即表名" class="headerlink" title="**select：用于指定查询中要返回的字段，如部分已有字段、全部字段（*）、新增计算字段from：**指定查询的数据来源，即表名"></a>**select：<strong>用于指定查询中要返回的字段，如部分已有字段、全部字段（*）、新增计算字段</strong>from：**指定查询的数据来源，即表名</h3><h3 id="where：-用于过滤数据，根据指定的条件排除不符合条件的行"><a href="#where：-用于过滤数据，根据指定的条件排除不符合条件的行" class="headerlink" title="**where：**用于过滤数据，根据指定的条件排除不符合条件的行"></a>**where：**用于过滤数据，根据指定的条件排除不符合条件的行</h3><h3 id="group-by：-对字段进行分组聚合，通常与聚合函数一起使用，以便对每个组执行统计或计算"><a href="#group-by：-对字段进行分组聚合，通常与聚合函数一起使用，以便对每个组执行统计或计算" class="headerlink" title="**group by：**对字段进行分组聚合，通常与聚合函数一起使用，以便对每个组执行统计或计算"></a>**group by：**对字段进行分组聚合，通常与聚合函数一起使用，以便对每个组执行统计或计算</h3><h3 id="having：-对分组后的结果进行过滤，适用于基于聚合函数的条件筛选"><a href="#having：-对分组后的结果进行过滤，适用于基于聚合函数的条件筛选" class="headerlink" title="**having：**对分组后的结果进行过滤，适用于基于聚合函数的条件筛选"></a>**having：**对分组后的结果进行过滤，适用于基于聚合函数的条件筛选</h3><h3 id="order-by：-对查询结果进行排序，可以指定排序的列默认升序，降序要加desc"><a href="#order-by：-对查询结果进行排序，可以指定排序的列默认升序，降序要加desc" class="headerlink" title="**order by：**对查询结果进行排序，可以指定排序的列默认升序，降序要加desc"></a>**order by：**对查询结果进行排序，可以指定排序的列默认升序，降序要加desc</h3><h3 id="limit：-限制查询返回的行数，如limit-n返回前n行、limit-m-n返回m-1到m-n行"><a href="#limit：-限制查询返回的行数，如limit-n返回前n行、limit-m-n返回m-1到m-n行" class="headerlink" title="**limit：**限制查询返回的行数，如limit n返回前n行、limit m,n返回m+1到m+n行"></a>**limit：**限制查询返回的行数，如limit n返回前n行、limit m,n返回m+1到m+n行</h3><p>这里解释了为什么在最后拼接字符段不再需要where的出现，也解释了为什么在from中不需要‘’而where需要的原因。</p>
-<h2 id="3-less3"><a href="#3-less3" class="headerlink" title="3.less3"></a>3.less3</h2><p>依旧是新的报错需要猜测它原来的查询语句</p>
-<p>2123</p>
+<h2 id="3-less3"><a href="#3-less3" class="headerlink" title="3.less3"></a>3.less3</h2><p>依旧是新的报错需要猜测它原来的查询语句</p class='item-img' data-src='https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250719154834868.png'><img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250719154834868.png" alt="image-20250719154834868" style="zoom:50%;" />
+
 <p>这里应该是（’i’)其他运用联合注入就可以了</p>
-<h2 id="4-less4"><a href="#4-less4" class="headerlink" title="4.less4"></a>4.less4</h2><p>2285</p>
+<h2 id="4-less4"><a href="#4-less4" class="headerlink" title="4.less4"></a>4.less4</h2 class='item-img' data-src='https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250719165540989.png'><img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250719165540989.png" alt="image-20250719165540989" style="zoom:50%;" />
+
 <p>差报错推测原输入为(‘“i”)所以输入要是1”)–+</p>
 <p>接着利用联合注入即可</p>
 <h2 id="5-less-5（报错注入即双注入）无回显点利用group-by函数特性创造回显点"><a href="#5-less-5（报错注入即双注入）无回显点利用group-by函数特性创造回显点" class="headerlink" title="5.less 5（报错注入即双注入）无回显点利用group by函数特性创造回显点"></a>5.less 5（报错注入即双注入）无回显点利用group by函数特性创造回显点</h2><p>没有可利用回显点需要学习新东西</p>
@@ -127,9 +131,8 @@ document.addEventListener("pjax:complete", reset);document.addEventListener('pja
 <p>参考他人博客</p>
 <p>自我总结：可以理解为在group by 读取数据并且保存在临时表的过程中由于floor（random(0)*2）会出现0和1的性质那么在检测时就会出现security0和security1但是在写入临时表的过程中又被计算了一遍也就是说security0写入可能变成security1，那这时候就重复了，重复就会报错告诉你security1重复了那你也就得到了数据库名了。注意的是可能也就是说有时候需要多次刷新才会显示</p>
 <p>套路公式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">payload：?id=-1&#x27; union select count(*),2,concat((select database()),&#x27;*&#x27;,floor(rand()*2))as a from information_schema.tables group by a--+ 这里把查询库的名字命名为a<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">payload：?id=-1&#x27; union select count(*),2,concat((select database()),&#x27;*&#x27;,floor(rand()*2))as a from information_schema.tables group by a--+ 这里把查询库的名字命名为a<br></code></pre></td></tr></table></figure class='item-img' data-src='https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250720200452357.png'><img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250720200452357.png" alt="image-20250720200452357" style="zoom:50%;" />
 
-<p>3989</p>
 <p>（这里是需要修改limit的比如limit 1，1 limit 2，1然后一个个去看这里会比较麻烦一些）</p>
 <p>把最终的payload放出来看眼</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?id=-1&#x27; union select count(*),2,concat(&#x27;*&#x27;,(select concat_ws(char(32,44,32),id,username,password) from users limit 1,1),&#x27;*&#x27;,floor(rand()*2))as a from information_schema.tables group by a--+  <br><br></code></pre></td></tr></table></figure>
@@ -143,24 +146,25 @@ document.addEventListener("pjax:complete", reset);document.addEventListener('pja
 <h1 id="报错注入最全链接https-blog-csdn-net-haishiqiguai-article-details-147591123（写的确实豪）"><a href="#报错注入最全链接https-blog-csdn-net-haishiqiguai-article-details-147591123（写的确实豪）" class="headerlink" title="报错注入最全链接https://blog.csdn.net/haishiqiguai/article/details/147591123（写的确实豪）"></a>报错注入最全链接<a target="_blank" rel="noopener" href="https://blog.csdn.net/haishiqiguai/article/details/147591123%EF%BC%88%E5%86%99%E7%9A%84%E7%A1%AE%E5%AE%9E%E8%B1%AA%EF%BC%89">https://blog.csdn.net/haishiqiguai/article/details/147591123（写的确实豪）</a></h1><h2 id="5-less6报错注入updatexml（）函数版"><a href="#5-less6报错注入updatexml（）函数版" class="headerlink" title="5.less6报错注入updatexml（）函数版"></a>5.less6报错注入updatexml（）函数版</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/haishiqiguai/article/details/147591123">https://blog.csdn.net/haishiqiguai/article/details/147591123</a></p>
 <p>利用updatexml函数</p>
 <h2 id="6-Less7-导出文件GET字符型注入"><a href="#6-Less7-导出文件GET字符型注入" class="headerlink" title="6.Less7 导出文件GET字符型注入"></a>6.Less7 导出文件GET字符型注入</h2><p>这个是纯试出来的?id&#x3D;1’))–+</p>
-<p>然后用and测试length（database()）测出来是9</p>
-<p>5186</p>
+<p>然后用and测试length（database()）测出来是9</p class='item-img' data-src='https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250722171043628.png'><img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250722171043628.png" alt="image-20250722171043628" style="zoom:50%;" />
+
 <p>然后甚至可以用substr（）一点点爆字母 and substr(database(),1,1)&#x3D;’s’</p>
 <p>这里用导入文件的方式</p>
 <p>用到两个函数 要去前面几关去获取</p>
 <p>basedir()指定了安装MYSQL的安装路径</p>
-<p>datadir()指定了安装MYSQL的数据文件路径</p>
-<p>5450</p>
+<p>datadir()指定了安装MYSQL的数据文件路径</p class='item-img' data-src='https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporamytyporaimage-20250722172524389.png'><img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporamytyporaimage-20250722172524389.png" alt="image-20250722172524389" style="zoom:50%;" />
+
 <p>:D:\phpstudy_pro\Extensions\MySQL5.7.26\</p>
-<p>D:\phpstudy_pro\Extensions\MySQL5.7.26\data\</p>
-<p>5672</p>
+<p>D:\phpstudy_pro\Extensions\MySQL5.7.26\data\</p class='item-img' data-src='https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250722180847634.png'><img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250722180847634.png" alt="image-20250722180847634" style="zoom:50%;" />
+
 <p>放个payload吧页面回显失败但是我的文件夹里还是没有出现hack.php失败了，</p>
 <p>这里下一步直接连接蚁剑就可以了。</p>
 <h2 id="7-Less-8，9，10和上面一样用substr一个个爆"><a href="#7-Less-8，9，10和上面一样用substr一个个爆" class="headerlink" title="7.Less-8，9，10和上面一样用substr一个个爆"></a>7.Less-8，9，10和上面一样用substr一个个爆</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43531669/article/details/96746687">https://blog.csdn.net/qq_43531669/article/details/96746687</a></p>
 <p>这篇博客就是专门爆的里面还附带了脚本避免了手工注入的繁复</p>
 <h2 id="8-Less-11Post注入"><a href="#8-Less-11Post注入" class="headerlink" title="8.Less-11Post注入"></a>8.Less-11Post注入</h2><p>万能密码 admin’ and true# 或者 admin’ or 1&#x3D;1#</p>
 <p>登录成功以后联合查询即可</p>
-<h2 id="less12和上面一样只是改成了-“i”"><a href="#less12和上面一样只是改成了-“i”" class="headerlink" title="less12和上面一样只是改成了(“i”)"></a>less12和上面一样只是改成了(“i”)</h2><p>6087</p>
+<h2 id="less12和上面一样只是改成了-“i”"><a href="#less12和上面一样只是改成了-“i”" class="headerlink" title="less12和上面一样只是改成了(“i”)"></a>less12和上面一样只是改成了(“i”)</h2 class='item-img' data-src='https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250723160858445.png'><img src="https://woyom-1374329874.cos.ap-nanjing.myqcloud.com/mytyporamytyporaimage-20250723160858445.png" alt="image-20250723160858445" style="zoom:50%;" />
+
 <h2 id="less13-password是注入点"><a href="#less13-password是注入点" class="headerlink" title="less13 password是注入点"></a>less13 password是注入点</h2><p>万能密码123’) or 1&#x3D;1# 这个是无回显爆破相当恶心</p>
 <h2 id="less14和上题一样"><a href="#less14和上题一样" class="headerlink" title="less14和上题一样"></a>less14和上题一样</h2><h2 id="less15时间延迟但是还是爆破"><a href="#less15时间延迟但是还是爆破" class="headerlink" title="less15时间延迟但是还是爆破"></a>less15时间延迟但是还是爆破</h2><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>感觉sql其实挺公式化的无回显点的时候甚至可以无脑爆破</p>
 <p>也学到挺多的无回显注入还得是脚本方便一个个爆真的构式</p>
